@@ -8,6 +8,7 @@ import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata = {
   metadataBase: new URL("https://codenotes-rho.vercel.app"),
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-board font-body text-chalk antialiased flex flex-col">
+        <GoogleAnalytics measurementId="G-FZ8VT68CKC" />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
