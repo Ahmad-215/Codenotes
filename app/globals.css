@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #16211c;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(237, 232, 220, 0.035) 1px,
+    transparent 0
+  );
+  background-size: 3px 3px;
+}
+
+::selection {
+  background: #e3a23c;
+  color: #16211c;
+}
+
+:focus-visible {
+  outline: 2px solid #e3a23c;
+  outline-offset: 3px;
+}
+
+/* Chalk underline signature — hand-drawn feel via a wavy SVG border image */
+.chalk-underline {
+  position: relative;
+  display: inline-block;
+}
+.chalk-underline::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: -0.08em;
+  height: 0.14em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 10' preserveAspectRatio='none'%3E%3Cpath d='M0 6 Q 15 2 30 6 T 60 6 T 90 6 T 120 6 T 150 6 T 180 6 T 210 6' fill='none' stroke='%23E3A23C' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 60px 10px;
+  opacity: 0.9;
+}
+
+.prose-notes {
+  --tw-prose-body: #d7d2c6;
+  --tw-prose-headings: #ede8dc;
+  --tw-prose-links: #e3a23c;
+  --tw-prose-bold: #ede8dc;
+  --tw-prose-code: #e3a23c;
+  --tw-prose-quotes: #a9b3aa;
+  --tw-prose-quote-borders: #2b3a31;
+  --tw-prose-hr: #2b3a31;
+  --tw-prose-bullets: #4fa89a;
+  --tw-prose-counters: #4fa89a;
+}
+
+.prose-notes pre {
+  background-color: #101a15 !important;
+  border: 1px solid #2b3a31;
+}
+
+.prose-notes code::before,
+.prose-notes code::after {
+  content: "" !important;
+}
+
+.prose-notes code {
+  background-color: #101a15;
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.85em;
+}
+
+.prose-notes pre code {
+  background-color: transparent;
+  padding: 0;
+}
