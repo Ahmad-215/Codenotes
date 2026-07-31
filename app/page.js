@@ -1,4 +1,3 @@
-import InspiredBy from "@/components/InspiredBy";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllNotes, getAllTips, CATEGORY_META } from "@/lib/content";
@@ -73,7 +72,7 @@ export default function HomePage() {
       </section>
 
       {/* Latest tips */}
-      <section className="py-16 border-b border-board-line">
+      <section className="py-16">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="font-display font-bold text-2xl">Recent tips</h2>
           <Link href="/tips" className="text-sm text-teal hover:underline">
@@ -98,9 +97,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* Inspired By */}
-      <InspiredBy />
     </div>
   );
 }
