@@ -1,4 +1,5 @@
 import InspiredBy from "@/components/InspiredBy";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllNotes, getAllTips, CATEGORY_META } from "@/lib/content";
 import CategoryTab from "@/components/CategoryTab";
@@ -10,29 +11,39 @@ export default function HomePage() {
   return (
     <div className="max-w-5xl mx-auto px-6">
       {/* Hero */}
-      <section className="pt-20 pb-16 border-b border-board-line">
-        <p className="font-mono text-sm text-teal mb-4">// notes from a CS student, in progress</p>
-        <h1 className="font-display font-bold text-4xl sm:text-5xl leading-tight max-w-2xl">
-          Programming notes that read like{" "}
-          <span className="chalk-underline">someone actually learning it</span>.
-        </h1>
-        <p className="mt-6 text-chalk-dim max-w-xl text-lg">
-          No filler, no recycled tutorials. Just clear notes on Python, MySQL, Java,
-          and web development — plus the resources and tips that actually helped.
-        </p>
-        <div className="mt-8 flex gap-4">
-          <Link
-            href="/notes"
-            className="bg-amber text-board font-semibold px-5 py-2.5 rounded-md hover:bg-amber/90 transition-colors"
-          >
-            Browse the notes
-          </Link>
-          <Link
-            href="/resources"
-            className="border border-board-line px-5 py-2.5 rounded-md text-chalk hover:bg-board-raised transition-colors"
-          >
-            See resources
-          </Link>
+      <section className="pt-20 pb-16 border-b border-board-line flex flex-col sm:flex-row items-center gap-10">
+        <Image
+          src="/images/ahmad-profile.jpg"
+          alt="Ahmad - CodeNotes Founder"
+          width={220}
+          height={220}
+          className="rounded-full shadow-lg border-4 border-amber object-cover shrink-0"
+          priority
+        />
+        <div>
+          <p className="font-mono text-sm text-teal mb-4">// notes from a CS student, in progress</p>
+          <h1 className="font-display font-bold text-4xl sm:text-5xl leading-tight max-w-2xl">
+            Programming notes that read like{" "}
+            <span className="chalk-underline">someone actually learning it</span>.
+          </h1>
+          <p className="mt-6 text-chalk-dim max-w-xl text-lg">
+            No filler, no recycled tutorials. Just clear notes on Python, MySQL, Java,
+            and web development — plus the resources and tips that actually helped.
+          </p>
+          <div className="mt-8 flex gap-4">
+            <Link
+              href="/notes"
+              className="bg-amber text-board font-semibold px-5 py-2.5 rounded-md hover:bg-amber/90 transition-colors"
+            >
+              Browse the notes
+            </Link>
+            <Link
+              href="/resources"
+              className="border border-board-line px-5 py-2.5 rounded-md text-chalk hover:bg-board-raised transition-colors"
+            >
+              See resources
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -62,7 +73,7 @@ export default function HomePage() {
       </section>
 
       {/* Latest tips */}
-      <section className="py-16">
+      <section className="py-16 border-b border-board-line">
         <div className="flex items-baseline justify-between mb-8">
           <h2 className="font-display font-bold text-2xl">Recent tips</h2>
           <Link href="/tips" className="text-sm text-teal hover:underline">
@@ -87,6 +98,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Inspired By */}
+      <InspiredBy />
     </div>
   );
 }
