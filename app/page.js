@@ -1,3 +1,4 @@
+import InspiredBy from "@/components/InspiredBy";
 import Link from "next/link";
 import { getAllNotes, getAllTips, CATEGORY_META } from "@/lib/content";
 import CategoryTab from "@/components/CategoryTab";
