@@ -12,7 +12,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="pt-20 pb-16 border-b border-board-line flex flex-col sm:flex-row items-center gap-10">
         <Image
-          src="/images/ahmad-profile.jpg"
+          src="/images/1.jpg"
           alt="Ahmad - CodeNotes Founder"
           width={220}
           height={220}
