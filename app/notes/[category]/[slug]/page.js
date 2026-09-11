@@ -45,6 +45,17 @@ export default function NotePage({ params }) {
       {note.description && (
         <p className="mt-3 text-chalk-dim text-lg">{note.description}</p>
       )}
+
+      {note.pdf && (
+        
+          href={note.pdf}
+          download
+          className="inline-flex items-center gap-2 mt-6 bg-amber text-board font-semibold px-4 py-2 rounded-md hover:bg-amber/90 transition-colors text-sm"
+        >
+          📄 Download PDF
+        </a>
+      )}
+
       <div
         className="prose prose-invert prose-notes max-w-none mt-10"
         dangerouslySetInnerHTML={{ __html: note.html }}
